@@ -47,21 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Email Obfuscation
-    const emailLink = document.querySelector('.email-link');
-    if (emailLink) {
-        emailLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const user = emailLink.getAttribute('data-user');
-            const domain = emailLink.getAttribute('data-domain');
-            const email = `${user}@${domain}`;
-            
-            // Update href and text content
-            emailLink.href = `mailto:${email}`;
-            emailLink.textContent = email;
-            
-            // Open mail client
-            window.location.href = `mailto:${email}`;
-        });
-    }
+
 });
