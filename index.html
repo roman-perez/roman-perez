@@ -16,7 +16,11 @@
 
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for icons (using a CDN for simplicity) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -40,160 +44,169 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content fade-in">
-            <p class="hero-subtitle">Doctorant en philosophie au laboratoire SPHÈRE, Université Paris Cité</p>
-            <h1 class="hero-title">Logique et philosophie du langage</h1>
-            <div class="hero-buttons">
-                <a href="#research" class="btn btn-primary">Mes Recherches</a>
-                <a href="#contact" class="btn btn-outline">Me Contacter</a>
+    <main>
+        <!-- Hero Section -->
+        <header id="home" class="hero">
+            <div class="hero-content fade-in">
+                <p class="hero-subtitle">Doctorant en philosophie au laboratoire SPHÈRE, Université Paris Cité</p>
+                <h1 class="hero-title">Logique et philosophie du langage</h1>
+                <div class="hero-buttons">
+                    <a href="#research" class="btn btn-primary">Mes Recherches</a>
+                    <a href="#contact" class="btn btn-outline">Me Contacter</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image-container fade-in-delay">
-            <img src="photo.png" alt="Roman Perez" class="profile-photo">
-        </div>
-    </header>
+            <div class="hero-image-container fade-in-delay">
+                <picture>
+                    <source srcset="photo.webp" type="image/webp">
+                    <img src="photo.png" alt="Roman Perez" class="profile-photo" width="800" height="800">
+                </picture>
+            </div>
+        </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">À propos</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Bienvenue sur mon site académique. Je suis actuellement doctorant au laboratoire SPHÈRE
-                        (Université Paris Cité),
-                        où je mène des recherches sur « Logique et vérité » sous la direction de Brice Halimi.
-                    </p>
-                    <p>
-                        Mon parcours académique, jalonné par l'École Normale Supérieure de Lyon et l'agrégation de
-                        philosophie, m'a conduit à explorer
-                        les fondements de la logique et de l'histoire de la philosophie. Ce site a pour vocation de
-                        présenter mes travaux,
-                        mon parcours et mes publications.
-                    </p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Années de Recherche</span>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">À propos</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Bienvenue sur mon site académique. Je suis actuellement doctorant au laboratoire SPHÈRE
+                            (Université Paris Cité),
+                            où je mène des recherches sur « Logique et vérité » sous la direction de Brice Halimi.
+                        </p>
+                        <p>
+                            Mon parcours académique, jalonné par l'École Normale Supérieure de Lyon et l'agrégation de
+                            philosophie, m'a conduit à explorer
+                            les fondements de la logique et de l'histoire de la philosophie. Ce site a pour vocation de
+                            présenter mes travaux,
+                            mon parcours et mes publications.
+                        </p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Années de Recherche</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Publications</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">ENS</span>
+                                <span class="stat-label">de Lyon</span>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Publications</span>
+                    </div>
+                    <div class="about-card">
+                        <h3>Intérêts de Recherche</h3>
+                        <ul class="interests-list">
+                            <li><i class="fa-solid fa-atom"></i> Philosophie des sciences formelles</li>
+                            <li><i class="fa-solid fa-book-open"></i> Philosophie du langage</li>
+                            <li><i class="fa-solid fa-magnifying-glass"></i> Épistémologie</li>
+                            <li><i class="fa-solid fa-brain"></i> Philosophie de la logique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Recherche</h2>
+                <p class="section-subtitle">Aperçu de mes travaux actuels et passés.</p>
+                <p style="text-align: center; margin-bottom: 2rem;">Membre du <a href="https://refl.fr/members/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Réflexions sur les
+                        fondements de la logique (ReFL)</a>.</p>
+
+                <div class="research-cards">
+                    <article class="card">
+                        <div class="card-content">
+                            <span class="tag">Thèse en cours</span>
+                            <h3>Logique et vérité</h3>
+                            <p>Thèse de doctorat sous la direction de Brice Halimi. Recherche au laboratoire SPHÈRE
+                                (Sciences, Philosophie, Histoire).</p>
+                            <a href="#" class="read-more">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">ENS</span>
-                            <span class="stat-label">de Lyon</span>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <span class="tag">Projet Annexe</span>
+                            <h3>Laboratoire junior THEODEM</h3>
+                            <p>Création du laboratoire junior interdisciplinaire THEODEM, orienté vers la logique
+                                linéaire,
+                                à l'ENS de Lyon (2022-2023).</p>
+                            <a href="#" class="read-more">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
-                    </div>
-                </div>
-                <div class="about-card">
-                    <h3>Intérêts de Recherche</h3>
-                    <ul class="interests-list">
-                        <li><i class="fa-solid fa-atom"></i> Philosophie des sciences formelles</li>
-                        <li><i class="fa-solid fa-book-open"></i> Philosophie du langage</li>
-                        <li><i class="fa-solid fa-magnifying-glass"></i> Épistémologie</li>
-                        <li><i class="fa-solid fa-brain"></i> Philosophie de la logique</li>
-                    </ul>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Research Section -->
-    <section id="research" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Recherche</h2>
-            <p class="section-subtitle">Aperçu de mes travaux actuels et passés.</p>
-            <p style="text-align: center; margin-bottom: 2rem;">Membre du <a href="https://refl.fr/members/"
-                    target="_blank"
-                    style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Réflexions sur les
-                    fondements de la logique (ReFL)</a>.</p>
-
-            <div class="research-cards">
-                <article class="card">
-                    <div class="card-content">
-                        <span class="tag">Thèse en cours</span>
-                        <h3>Logique et vérité</h3>
-                        <p>Thèse de doctorat sous la direction de Brice Halimi. Recherche au laboratoire SPHÈRE
-                            (Sciences, Philosophie, Histoire).</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-content">
-                        <span class="tag">Projet Annexe</span>
-                        <h3>Laboratoire junior THEODEM</h3>
-                        <p>Création du laboratoire junior interdisciplinaire THEODEM, orienté vers la logique linéaire,
-                            à l'ENS de Lyon (2022-2023).</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <span class="year">2024</span>
-                    <p>Contribution à un dictionnaire philosophique à paraître, à hauteur d’une vingtaine d’articles.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CV Section (Simplified timeline) -->
-    <section id="cv" class="section">
-        <div class="container">
-            <h2 class="section-title">Parcours</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - Présent</div>
-                    <div class="timeline-content">
-                        <h3>Doctorat en Philosophie</h3>
-                        <p class="institution">Université Paris Cité, Laboratoire SPHÈRE</p>
-                        <p>Sujet : « Logique et vérité », sous la direction de Brice Halimi. Chargé de TD en philosophie
-                            des sciences et introduction à la philosophie.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2022</div>
-                    <div class="timeline-content">
-                        <h3>Master 2 d’Histoire de la philosophie</h3>
-                        <p class="institution">ENS de Lyon</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2020</div>
-                    <div class="timeline-content">
-                        <h3>Agrégation de Philosophie</h3>
-                        <p class="institution">Concours externe (rang : 55ème)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2022</div>
-                    <div class="timeline-content">
-                        <h3>École Normale Supérieure de Lyon</h3>
-                        <p class="institution">Département de Philosophie</p>
-                        <p>Admission sur dossier (2018). Master 1 (2018-2019) sur l'empirisme logique de Moritz Schlick.
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <span class="year">2024</span>
+                        <p>Contribution à un dictionnaire philosophique à paraître, à hauteur d’une vingtaine
+                            d’articles.
                         </p>
                     </div>
                 </div>
-                <!-- Add more items based on the actual CV -->
             </div>
-            <div class="cv-download">
-                <a href="CV.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-download"></i>
-                    Télécharger le CV complet</a>
+        </section>
+
+        <!-- CV Section (Simplified timeline) -->
+        <section id="cv" class="section">
+            <div class="container">
+                <h2 class="section-title">Parcours</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Présent</div>
+                        <div class="timeline-content">
+                            <h3>Doctorat en Philosophie</h3>
+                            <p class="institution">Université Paris Cité, Laboratoire SPHÈRE</p>
+                            <p>Sujet : « Logique et vérité », sous la direction de Brice Halimi. Chargé de TD en
+                                philosophie
+                                des sciences et introduction à la philosophie.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Master 2 d’Histoire de la philosophie</h3>
+                            <p class="institution">ENS de Lyon</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h3>Agrégation de Philosophie</h3>
+                            <p class="institution">Concours externe (rang : 55ème)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>École Normale Supérieure de Lyon</h3>
+                            <p class="institution">Département de Philosophie</p>
+                            <p>Admission sur dossier (2018). Master 1 (2018-2019) sur l'empirisme logique de Moritz
+                                Schlick.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Add more items based on the actual CV -->
+                </div>
+                <div class="cv-download">
+                    <a href="CV.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-download"></i>
+                        Télécharger le CV complet</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer / Contact -->
     <footer id="contact">
@@ -206,12 +219,15 @@
             <div class="footer-right">
                 <p>Me contacter :</p>
                 <div class="email-container">
-                    <img src="mail.png" alt="Email" style="height: 20px;">
+                    <picture>
+                        <source srcset="mail.webp" type="image/webp">
+                        <img src="mail.png" alt="Email" width="300" height="31" style="height: 20px; width: auto;">
+                    </picture>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/roman-perez-499420128" target="_blank"><i
+                    <a href="https://www.linkedin.com/in/roman-perez-499420128" target="_blank" aria-label="LinkedIn"><i
                             class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://u-paris.academia.edu/RomanPerez" target="_blank"><i
+                    <a href="https://u-paris.academia.edu/RomanPerez" target="_blank" aria-label="Academia"><i
                             class="fa-solid fa-graduation-cap"></i></a>
                 </div>
             </div>
