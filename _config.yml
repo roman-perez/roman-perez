@@ -1,0 +1,4 @@
+exclude:
+  - "Diplôme de l'ENS .pdf"
+  - "photo linkedIn.heic"
+  - "cv.txt"

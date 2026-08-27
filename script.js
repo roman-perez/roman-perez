@@ -1,51 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-
-            // Simple animation for bars could be added in CSS with .active class
-        });
-    }
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (hamburger && hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-
-            // Smmooth scroll handled by CSS, but we can add offset if needed
-        });
-    });
-
-    // Intersection Observer for Fade-in on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    const closeMenu = () => {
+        if (!menuButton || !navigation) return;
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Ouvrir le menu');
+        navigation.classList.remove('is-open');
     };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    // Select elements to animate
-    const animateElements = document.querySelectorAll('.section-title, .about-text p, .card, .timeline-item');
-
-    animateElements.forEach(el => {
-        el.classList.add('scroll-animation');
-        observer.observe(el);
+    menuButton?.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+        navigation?.classList.toggle('is-open', !isOpen);
     });
-
-
+    navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') { closeMenu(); menuButton?.focus(); }
+    });
+    const year = document.querySelector('#current-year');
+    if (year) year.textContent = String(new Date().getFullYear());
 });

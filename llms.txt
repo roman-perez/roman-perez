@@ -1,0 +1,20 @@
+# Roman Perez
+
+> Site académique officiel de Roman Perez, agrégé et doctorant en philosophie à l’Université Paris Cité.
+
+## Profil
+
+- Domaine : philosophie de la logique, philosophie du langage et épistémologie.
+- Thèse : « Logique et vérité », préparée depuis 2022 au laboratoire SPHÈRE.
+- Direction de thèse : Brice Halimi.
+- Formation : École normale supérieure de Lyon et licence de logique à l’Université Paris 1 Panthéon-Sorbonne.
+- Groupe de recherche : ReFL — Réflexions sur les fondements de la logique.
+
+## Pages et documents de référence
+
+- [Site et profil académique](https://romanperez.fr/)
+- [Curriculum vitæ](https://romanperez.fr/CV.pdf)
+- [Laboratoire SPHÈRE](https://sphere.cnrs.fr/)
+- [Profil Academia](https://u-paris.academia.edu/RomanPerez)
+
+Dernière mise à jour : 2026-08-25.
